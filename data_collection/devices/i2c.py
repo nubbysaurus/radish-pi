@@ -20,6 +20,21 @@ class ADS1115(object):
     """
     def __init__(self):
         self.ads = ADS.ADS1115(i2c)
+        self.chan = AnalogIn(self.ads, ADS.P0)
+
+def test_i2c():
+    """
+    Ensure that all systems are a big GO.    ) 0 o .
+    """
+    # Edit overall test duration (s):
+    test_duration = 60
+    # Edit sampling frequency (Hz):
+    f_sample = 0.5
+
+    # Sample data from I2C sensors over the desired time frame.
+    this_dude = ADS1115()
+    print(this_dude.chan.value, this_dude.chan.voltage)
 
 if __name__ == '__main__':
     print('Under construction...  ) 0 o .')
+    test_i2c()
