@@ -8,13 +8,14 @@ import sys
 if sys.version_info[0] < 3:
     print('Alas! I2C unsupported with this Pi below Python3!  ) 0 o .')
     sys.exit(1)
-import board
-import busio
-i2c = busio.I2C(board.SCL, board.SDA)
-import adafruit_ads1x15.ads1115 as ADS
-import adafruit_ads1x15.analog_in import AnalogIn
+import Adafruit_ADS1x15
+#import board
+#import busio
+#i2c = busio.I2C(board.SCL, board.SDA)
+#import adafruit_ads1x15.ads1115 as ADS
+#from adafruit_ads1x15.analog_in import AnalogIn
 
-class ADS1115(object):
+class ADC(object):
     """
     Wrapper for ADS1115 ADC.
     """
