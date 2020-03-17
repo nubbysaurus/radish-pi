@@ -1,6 +1,11 @@
 import Adafruit_ADS1x15
 import time
 
+# Pinout:
+#   * SDA - GPIO2
+#   * SCL - GPIO3
+#   * VDD - +5V
+#   * GND - 0V
 # To install this package on the raspberry pi, use:
 #
 # sudo apt-get update
@@ -24,9 +29,12 @@ def milk():
     """
     Test ADCs!
     """
-    thing = ADC()
+    thing = ADC(adc_address=0x49)
     while(1<2):
-        print(thing.readADC(3,1))
+        for index in range(0:4:1):
+            print('. '.join([
+                str(index),
+                thing.readADC(index,1)]))
         time.sleep(0.1)
 
 
