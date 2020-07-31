@@ -4,7 +4,7 @@ import time
 # Pinout:
 #   * SDA - GPIO2
 #   * SCL - GPIO3
-#   * VDD - +5V
+#   * VDD - +3.3V
 #   * GND - 0V
 
 # Choose a gain of 1 for reading voltages from 0 to 4.09V.
